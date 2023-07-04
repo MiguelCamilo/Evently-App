@@ -20,11 +20,11 @@ const MainNavigation = () => {
 					<span className="ml-3 text-xl">Evently</span>
 				</a>
 				<nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-					<Link to={"/"} className="mr-5 text-white hover:font-bold duration-200">All Meetups</Link>
-					<Link className="mr-5 text-white hover:font-bold duration-200">Favorites</Link>					
+					<Link to={"/"} className="mr-5 text-white hover:font-bold duration-200">All Events</Link>
+					<Link to={"/favorites"} className="mr-5 text-white hover:font-bold duration-200">My Favorite Events</Link>					
 				</nav>
-				<button className="inline-flex items-center bg-white hover:shadow-xl duration-200 border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0">
-					Add New Meetup
+				<Link to={"/newevent"} className="inline-flex items-center bg-white hover:shadow-xl duration-200 border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0">
+					Add New Event
 					<svg
 						fill="none"
 						stroke="currentColor"
@@ -36,7 +36,7 @@ const MainNavigation = () => {
 					>
 						<path d="M5 12h14M12 5l7 7-7 7" />
 					</svg>
-				</button>
+				</Link>
 			</div>
 		</header>
 	);
