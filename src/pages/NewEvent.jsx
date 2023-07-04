@@ -1,11 +1,18 @@
+// import axios from "axios"
+
+import NewEventForm from "../components/NewEventForm";
 
 const NewEvent = () => {
+    const onAddEventHandler = (eventData) => {
 
-    return (
-        <section>
-            <h1>Add New Event</h1>
-        </section>
-    )
-}
+    }
+	return (
+		<section>
+			<NewEventForm 
+                onAddEventHandler={onAddEventHandler}
+            />
+		</section>
+	);
+};
 
-export default NewEvent
+export default NewEvent;
