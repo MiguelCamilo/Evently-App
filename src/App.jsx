@@ -5,6 +5,9 @@ import NewEvent from "./pages/NewEvent";
 import Favorites from "./pages/Favorites";
 import Layout from "./components/layout/Layout";
 
+import { useContext } from "react";
+import FavoritesContext from "./context/favorite-context";
+
 function App() {
 	return (
 		<Layout>

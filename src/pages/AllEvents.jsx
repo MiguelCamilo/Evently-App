@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
 import axios from "axios";
+import { useState, useEffect } from "react";
 
-import { DUMMY_DATA } from "../data/dummy-data";
+// import { DUMMY_DATA } from "../data/dummy-data";
 import LoadingAnimation from "../components/layout/LoadingAnimation";
 import EventList from "../components/EventList";
 
@@ -13,9 +13,7 @@ const Home = () => {
 		axios
 			.get("https://evenly-app-client-default-rtdb.firebaseio.com/events.json")
 			.then((response) => {
-				const events = [];
-
-				// if(events.length > 0) setIsLoading(false)	
+				const events = [];				
 				
 				for (const key in response.data) {
 					// going through every key in firebase and creating an event
