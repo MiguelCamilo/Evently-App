@@ -3,7 +3,6 @@ import { useContext } from "react";
 import FavoritesContext from "../context/favorite-context";
 
 import EventList from "../components/EventList";
-import LoadingAnimation from "../components/layout/LoadingAnimation";
 
 const Favorites = () => {
 	const favoritesCtx = useContext(FavoritesContext);

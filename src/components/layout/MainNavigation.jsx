@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+
+import FavoritesContext from "../../context/favorite-context";
 
 const MainNavigation = () => {
+	const favoriteCtx = useContext(FavoritesContext);
+
+	let amountOfFavorites = favoriteCtx.totalFavorites;
 	return (
 		<div className="navbar bg-orange-300">
 			<div className="navbar-start">
@@ -27,27 +33,63 @@ const MainNavigation = () => {
 						className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-orange-300 rounded-box w-52"
 					>
 						<li>
-						<Link to={"/"} className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent">All Events</Link>
-					</li>
-					<li>
-						<Link to={"favorites"} className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent">My Favorites</Link>
-					</li>
+							<Link
+								to={"/"}
+								className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent"
+							>
+								All Events
+							</Link>
+						</li>
+						<li>
+							<Link
+								to={"favorites"}
+								className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent"
+							>
+								My Favorites
+								<span className="inline-flex bottom-2 right-2 items-center justify-center w-5 h-5 text-xs font-semibold text-white bg-orange-400 rounded-full">
+									{amountOfFavorites}
+								</span>
+							</Link>
+						</li>
 					</ul>
 				</div>
-				<Link to={"/"} className="text-white uppercase font-bold cursor-pointer text-xl">Evently</Link>
+				<Link
+					to={"/"}
+					className="text-white uppercase font-bold cursor-pointer text-xl"
+				>
+					Evently
+				</Link>
 			</div>
 			<div className="navbar-center hidden lg:flex">
 				<ul className="menu menu-horizontal px-1">
 					<li>
-						<Link to={"/"} className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent">All Events</Link>
+						<Link
+							to={"/"}
+							className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent"
+						>
+							All Events
+						</Link>
 					</li>
 					<li>
-						<Link to={"favorites"} className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent">My Favorites</Link>
+						<Link
+							to={"favorites"}
+							className="text-white text-md hover:font-bold hover:text-white hover:bg-transparent"
+						>
+							My Favorites
+							<span className="inline-flex items-center justify-center w-5 h-5 text-xs font-semibold text-white bg-orange-400 rounded-full">
+								{amountOfFavorites}
+							</span>
+						</Link>
 					</li>
 				</ul>
 			</div>
 			<div className="navbar-end">
-				<Link to={"/newevent"} className="p-2 bg-white rounded-md text-orange-300 text-center hover:shadow-lg w-full lg:w-[30%]">Add New Event</Link>
+				<Link
+					to={"/newevent"}
+					className="p-2 bg-white rounded-md text-orange-300 text-center hover:shadow-lg w-full lg:w-[30%]"
+				>
+					Add New Event
+				</Link>
 			</div>
 		</div>
 	);
