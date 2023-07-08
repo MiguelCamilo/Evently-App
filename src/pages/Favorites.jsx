@@ -30,7 +30,7 @@ const Favorites = () => {
 	};
 	return (
 		<>
-        <h1 className="mb-5 text-center text-black font-bold text-md sm:text-xl">List of Favorites</h1>
+        <h1 className="mb-5 text-center text-white font-bold text-md sm:text-xl bg-orange-300 p-3 rounded-lg my-5">List of Favorites</h1>
 			{favoritesCtx.totalFavorites === 0 ? (
 				<NoLoadedDataWarning />
 			) : (
