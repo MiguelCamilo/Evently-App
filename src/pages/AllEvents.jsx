@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 // import { DUMMY_DATA } from "../data/dummy-data";
+import { db_env } from "../db.env.config";
 import LoadingAnimation from "../components/layout/LoadingAnimation";
 import EventList from "../components/EventList";
 
@@ -11,7 +12,7 @@ const Home = () => {
 
 	useEffect(() => {
 		axios
-			.get("https://evenly-app-client-default-rtdb.firebaseio.com/events.json")
+			.get(db_env.database_api)
 			.then((response) => {
 				const events = [];				
 				
